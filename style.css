@@ -1,7 +1,14 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: nokia;
 }
+
+@font-face {
+    font-family: nokia;
+    src: url("./fonts/nokiafc22.ttf");
+}
+
 
 body{
     background-color: black;
@@ -38,10 +45,8 @@ h1{
 }
 
 img{
-    width: 50px; 
-    margin-top: 30px;
-    margin-top: -28px;
-
+    width: 70px; 
+    margin-top: -35px;
 }
 
 
@@ -55,17 +60,18 @@ img{
 }
 
 input{
-    padding: 20px;
+    padding:10px;
     width: 100px;
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: bold;
     background-color: transparent;
     color: white;
     border: 2px solid white;
+    text-align: center;
 }
 
 .inputs button{
-    margin-left: 35px;
+    margin-left: 20px;
     padding: 10px;
     margin-top: 10px;
     font-weight: 900;
@@ -77,4 +83,16 @@ input{
 
 .status{
     margin-bottom: 30px;
+}
+
+
+#correct-number{
+    color: black;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 50px;
+    background-color: white;
+    margin-top: -35px;
+    padding: 9px;
+    height: 50px;
 }
