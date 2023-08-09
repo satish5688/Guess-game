@@ -1,9 +1,10 @@
-var Random_number = parseInt(Math.floor(Math.random() * 20 + 1));
+let Random_number = parseInt(Math.floor(Math.random() * 20 + 1));
+let previs_num;
 
 function play_again() {
   Random_number = parseInt(Math.floor(Math.random() * 20 + 1));
   console.log(Random_number);
-  document.getElementById("status").innerHTML = 'Start Guessing';
+  document.getElementById("status").innerHTML = "Start Guessing";
   document.getElementById("guessed-number").value = 0;
   var correct = document.getElementById("correct-number").innerHTML.trim();
 
@@ -18,11 +19,9 @@ function play_again() {
     highscore.innerHTML = score.innerHTML;
   }
   score.innerHTML = 20;
-  document.body.style.backgroundColor = "black";
+  document.body.classList.remove("guessed");
   document.getElementById("correct-number").innerHTML = "?";
 }
-
-
 
 function check_number() {
   let score = parseInt(document.getElementById("score").innerHTML);
@@ -31,10 +30,12 @@ function check_number() {
   if (score <= 0) {
     result = "You loose all your chances";
     document.getElementById("check").disabled = true;
+  } else if (number == previs_num) {
+    result = "Change Number & check";
   } else {
     if (number == Random_number) {
       result = "Correct number";
-      document.body.style.backgroundColor = "lightgreen";
+      document.body.classList.add("guessed");
       document.getElementById("check").disabled = true;
       var element = document.getElementById("correct-number");
       element.innerHTML = number;
@@ -48,6 +49,7 @@ function check_number() {
       result = "something unexpected";
     }
   }
+  previs_num = number;
   document.getElementById("status").innerHTML = result;
   document.getElementById("score").innerHTML = score;
 }
